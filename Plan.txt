@@ -1,0 +1,13 @@
+Pong game :
+
+1º - Build Git repository and push project local - check 
+2º - Make WSl show graphics and audio - Check 
+	-> Instal SFML in your WSL lib-dev (Check this Video if needed https://www.youtube.com/watch?v=5aWMIpRiuww&t=126s)
+	-> Go to website and build example code (https://www.sfml-dev.org/tutorials/2.5/start-linux.php)-check  
+	-> Run the Test_SFML to test for sound and -check 
+3º - Build Cmake build project 
+	-> Make so that I have included the sfml package -check 
+	-> Add Cmake dir for the "Test_SFML"
+	-> Add cmake for the my source files
+4º- Start biulding Pong
+	
