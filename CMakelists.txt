@@ -11,7 +11,7 @@ project(Pong VERSION 1.0
               LANGUAGES CXX)
 
 
-add_executable(${PROJECT_NAME} main.cpp Bat.cpp StructGame.cpp)
+add_executable(${PROJECT_NAME} main.cpp Bat.cpp StructGame.cpp GameLibrary.cpp Ball.cpp)
 
 find_package(SFML 2.5 COMPONENTS system window graphics network audio)
 
