@@ -4,6 +4,7 @@
 # you pick up the best policies.
 cmake_minimum_required(VERSION 3.1...3.25)
 set (CMAKE_CXX_STANDARD 17)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Project name and a few useful settings. Other commands can pick up the results
 project(Pong VERSION 1.0 
@@ -23,7 +24,6 @@ add_subdirectory(src)
 
 #The executable code is here
 add_subdirectory(app)
-
 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/fonts)
