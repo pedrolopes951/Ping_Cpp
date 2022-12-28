@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <cassert>
 
 int main()
 {
@@ -23,8 +24,9 @@ int main()
         window.clear();
         window.draw(shape);
         window.display();
-        sound.play(); // Turn down the volume trust me
+       // sound.play(); // Turn down the volume trust me
     }
     
+    assert(true==true);
     return 0;
 }

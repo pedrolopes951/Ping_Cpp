@@ -1,4 +1,4 @@
-#include "Bat.h"
+#include "Bat.hpp"
 #include "Ball.hpp"
 #include "GameLibrary.hpp"
 #include "Ball.hpp"

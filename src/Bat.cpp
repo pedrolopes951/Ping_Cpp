@@ -1,4 +1,4 @@
-#include "Bat.h"
+#include "Bat.hpp"
 
 // This the constructor and it is called when we create an object
 BatClass::Bat::Bat(float startX, float startY) 
