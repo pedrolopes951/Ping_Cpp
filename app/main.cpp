@@ -3,11 +3,11 @@
 #include "GameLibrary.hpp"
 #include "Ball.hpp"
 #include <sstream>
+#include <string>
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
 #include "chrono"
 #include "StructGame.hpp"
-#include <thread>
 
 int main()
 {
@@ -16,25 +16,14 @@ int main()
     // Create and open a window for the game
     sf::RenderWindow window(vm, "Pong", sf::Style::Default);
 
-    ScoreGame::Scores game_score(0, 3);
+    static ScoreGame::Scores game_score(0, 3);
     // Create a bat at the bottom center of the screen
-    BatClass::Bat bat(1920 / 2, 1080 - 20);
+    Bat::Bat bat(1920 / 2, 1080 - 20);
     // Create a ball
     Ball::Ball ball(1920 / 2, 0);
 
-    // We will add a ball in the next chapter
     // Create a Text object called HUD
-    Text::Text hud;
-    // A cool retro-style font
-    Font::Font font;
-    font.loadFromFile("fonts/DS-DIGI.TTF");
-    // Set the font to our retro-style
-    hud.setFont(font);
-    // Make it nice and big
-    hud.setCharacterSize(75);
-    // Choose a color
-    hud.setFillColor(sf::Color::White);
-    hud.setPosition(20, 20);
+    TextGame::Text hud("fonts/DS-DIGI.TTF",75,sf::Color::White,20,20);
     // Here is our clock for timing everything
     Clock::Clock clock;
     while (window.isOpen())

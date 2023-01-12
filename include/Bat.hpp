@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-namespace BatClass
+namespace Bat
 {
     class Bat
     {

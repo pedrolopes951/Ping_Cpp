@@ -3,7 +3,7 @@
 namespace ScoreGame{
 Scores::Scores(int score, int lives)
 {
-    m_lives = lives;
-    m_score = score;
+    ScoreGame::Scores::m_lives = lives;
+    ScoreGame::Scores::m_score = score;
 }
 };
