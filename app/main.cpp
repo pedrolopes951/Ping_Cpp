@@ -15,7 +15,7 @@ int main()
     // Create a video mode object
     sf::VideoMode vm(1920, 1080);
     // Create and open a window for the game
-    sf::RenderWindow window(vm, "Pong", sf::Style::Fullscreen);
+    sf::RenderWindow window(vm, "Pong", sf::Style::Default);
 
     static ScoreGame::Scores game_score(0, 3);
     // Create a bat at the bottom center of the screen
@@ -42,10 +42,17 @@ int main()
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
-                // Quit the game when the window is closed
+            {
+                // Quit the game when the window is closed bu the use mouse 
                 window.close();
+                return EXIT_SUCCESS;
+            }
+            // if(event.type == sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
+                // Put here the call for the menu and close onlu after the menus is drawn with the options
             
         }
+
+        if(!window.isOpen()) break;
         // Handle the player quitting
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         {
