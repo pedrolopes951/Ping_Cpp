@@ -2,7 +2,7 @@
 
 namespace TextGame
 {
-    Text::Text(std::string_view font_path,int16_t char_size,const sf::Color &color_text, float x_pos, float y_pos)
+    MyText::MyText(std::string_view font_path,int16_t char_size,const sf::Color &color_text, float x_pos, float y_pos)
     {
        if(!loadFromFile(std::string(font_path)))
        {

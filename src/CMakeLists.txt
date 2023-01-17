@@ -3,7 +3,11 @@ file(GLOB HEADER_LIST CONFIGURE_DEPENDS "${ModernCMakeExample_SOURCE_DIR}/includ
 # set(HEADER_LIST "${ModernCMakeExample_SOURCE_DIR}/include/lib.hpp")
 
 # Make an automatic library - will be static or dynamic based on user setting
-add_library(Pong_Library Bat.cpp Ball.cpp GameLibrary.cpp StructGame.cpp ${HEADER_LIST})
+add_library(Pong_Library Bat.cpp 
+                         Ball.cpp 
+                         GameLibrary.cpp 
+                         StructGame.cpp 
+                         InitMenu.cpp ${HEADER_LIST})
 
 
 # We need this directory, and users of our library will need it too

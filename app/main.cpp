@@ -2,6 +2,7 @@
 #include "Ball.hpp"
 #include "GameLibrary.hpp"
 #include "Ball.hpp"
+#include "InitMenu.hpp"
 #include <sstream>
 #include <string>
 #include <cstdlib>
@@ -14,7 +15,7 @@ int main()
     // Create a video mode object
     sf::VideoMode vm(1920, 1080);
     // Create and open a window for the game
-    sf::RenderWindow window(vm, "Pong", sf::Style::Default);
+    sf::RenderWindow window(vm, "Pong", sf::Style::Fullscreen);
 
     static ScoreGame::Scores game_score(0, 3);
     // Create a bat at the bottom center of the screen
@@ -23,11 +24,14 @@ int main()
     Ball::Ball ball(1920 / 2, 0);
 
     // Create a Text object called HUD
-    TextGame::Text hud("fonts/DS-DIGI.TTF",75,sf::Color::White,20,20);
+    TextGame::MyText hud("fonts/DS-DIGI.TTF",75,sf::Color::White,20,20);
+    InitMenu::Menu menu(window, hud);
     // Here is our clock for timing everything
-    Clock::Clock clock;
+    ClockGame::MyClock clock;
     while (window.isOpen())
     {
+        menu.Draw();
+
         /*
         Handle the player input
         ****************************
@@ -40,6 +44,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 // Quit the game when the window is closed
                 window.close();
+            
         }
         // Handle the player quitting
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
@@ -64,12 +69,14 @@ int main()
             bat.stopRight();
         }
 
+
         /*
         Update the bat, the ball and the HUD
         *****************************
         *****************************
         *****************************
         */
+        
         // Update the delta time
         sf::Time dt = clock.restart();
         bat.update(dt);
