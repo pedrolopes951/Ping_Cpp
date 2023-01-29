@@ -7,7 +7,9 @@ add_library(Pong_Library Bat.cpp
                          Ball.cpp 
                          GameLibrary.cpp 
                          StructGame.cpp 
-                         InitMenu.cpp ${HEADER_LIST})
+                         InitMenu.cpp 
+                         Player.cpp
+                         Game.cpp${HEADER_LIST})
 
 
 # We need this directory, and users of our library will need it too
